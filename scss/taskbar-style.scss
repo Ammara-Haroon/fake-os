@@ -1,0 +1,49 @@
+@use "./partials/variables" as var;
+@use "./partials/mixins" as mi;
+.taskbar {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  width: 100vw;
+  background-color: var.$windows-gray;
+  //border: 1px solid red;
+  border-top: 2px solid beige;
+  display: flex;
+  justify-content: space-between;
+  .btn {
+    font-weight: bold;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: var.$windows-gray;
+    @include mi.dbl-colored-border(white, grey);
+
+    &:active {
+      @include mi.dbl-colored-border(grey, white);
+    }
+    img {
+      height: 30px;
+      width: 30px;
+    }
+    p {
+      display: inline;
+      margin: 1px;
+    }
+
+    // border: 1px solid red;
+  }
+
+  .clock {
+    margin: 2px;
+    @include mi.dbl-colored-border(grey, white);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+  }
+}

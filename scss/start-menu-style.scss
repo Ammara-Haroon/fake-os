@@ -1,0 +1,59 @@
+@use "./partials/variables" as var;
+
+.start-menu {
+  bottom: 37px;
+  left: 0;
+  position: absolute;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid grey;
+  border-right: 2px solid grey;
+  z-index: 1;
+  display: none;
+
+  .banner {
+    background-image: linear-gradient(#3981c9, #000b7c);
+    width: 20px;
+    color: white;
+    display: inline;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    padding: 2px;
+    padding-top: 10px;
+  }
+  .menu-items {
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var.$windows-gray;
+
+    div {
+      display: flex;
+      //border: 1px solid red;
+      align-items: center;
+      padding: 8px;
+      img {
+        width: 1.5em;
+        height: 1.5em;
+        //border: 1px solid blue;
+      }
+      p {
+        //border: 1px solid salmon;
+        padding: 5px;
+        font-size: 15px;
+        text-decoration: none;
+      }
+    }
+    :hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: flex;
+}

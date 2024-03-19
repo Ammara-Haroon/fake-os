@@ -1,0 +1,122 @@
+.taskbar {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  width: 100vw;
+  background-color: #bdbebd;
+  border-top: 2px solid beige;
+  display: flex;
+  justify-content: space-between;
+}
+.taskbar .btn {
+  font-weight: bold;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: #bdbebd;
+  border-bottom: 2px solid grey;
+  border-right: 2px solid grey;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+.taskbar .btn:active {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+}
+.taskbar .btn img {
+  height: 30px;
+  width: 30px;
+}
+.taskbar .btn p {
+  display: inline;
+  margin: 1px;
+}
+.taskbar .clock {
+  margin: 2px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.start-menu {
+  bottom: 37px;
+  left: 0;
+  position: absolute;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid grey;
+  border-right: 2px solid grey;
+  z-index: 1;
+  display: none;
+}
+.start-menu .banner {
+  background-image: linear-gradient(#3981c9, #000b7c);
+  width: 20px;
+  color: white;
+  display: inline;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: bold;
+  padding: 2px;
+  padding-top: 10px;
+}
+.start-menu .menu-items {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #bdbebd;
+}
+.start-menu .menu-items div {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+.start-menu .menu-items div img {
+  width: 1.5em;
+  height: 1.5em;
+}
+.start-menu .menu-items div p {
+  padding: 5px;
+  font-size: 15px;
+  text-decoration: none;
+}
+.start-menu .menu-items :hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: flex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  font-family: sans-serif;
+}
+
+.wallpaper {
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
