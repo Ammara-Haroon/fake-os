@@ -1,0 +1,66 @@
+@use "./partials/variables" as var;
+
+.modal {
+  width: 40vw;
+  height: fit-content;
+  background-color: rgb(40, 40, 40);
+  align-self: center;
+  margin: 20px;
+  h1 {
+    margin: 10px 0px 30px 0px;
+    font-family: cursive;
+    color: beige;
+    font-size: 50px;
+    text-align: center;
+    z-index: 3;
+  }
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 40px;
+  z-index: 1;
+  //border: 1px solid red;
+  &__item {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    display: none;
+    width: 200px;
+    height: 200px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &--active {
+      visibility: visible;
+      display: inline;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+.arrows-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 10px;
+  button {
+    width: 100px;
+    font-family: bold;
+    font-size: xxx-large;
+    color: var.$windows-blue;
+    border: 5px solid beige;
+    border-radius: 10px;
+    &:hover {
+      border: 5px solid var.$windows-blue;
+    }
+  }
+}

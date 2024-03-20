@@ -1,0 +1,14 @@
+.menu-bar {
+  //border: 1px solid red;
+  color: beige;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #000b7c;
+  p {
+    font-weight: bold;
+    padding: 5px;
+    &:hover {
+      background-color: rgb(70, 70, 70);
+    }
+  }
+}

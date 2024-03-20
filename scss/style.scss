@@ -1,5 +1,8 @@
 @use "./taskbar-style.scss";
 @use "./start-menu-style.scss";
+@use "./gallery-style.scss";
+@use "./menu-bar-style.scss";
+@use "./partials/variables" as var;
 
 * {
   padding: 0;
@@ -15,4 +18,16 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.desktop-icon {
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+  position: fixed;
+  z-index: 0;
+
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.3);
+  }
 }

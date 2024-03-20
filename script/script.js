@@ -24,3 +24,16 @@ startBtn.addEventListener("click", () => {
   //alert("hello");
   //console.log("hi");
 });
+
+const closeApp = (target) => {
+  //console.log(target.parentElement.parentElement);
+  const modal = target.parentElement.parentElement;
+  const modalParent = modal.parentElement;
+  modalParent.removeChild(modal);
+};
+const closeBtns = document.querySelectorAll(".close-btn");
+closeBtns.forEach((btn) => {
+  btn.addEventListener("click", (event, target) => {
+    closeApp(event.target);
+  });
+});
