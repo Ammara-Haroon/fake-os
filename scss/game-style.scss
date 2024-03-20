@@ -1,0 +1,30 @@
+@use "./partials/variables" as var;
+
+#gameModal {
+  //width: fit-content;
+  //height: fit-content;
+  h1 {
+    font-size: 16px;
+  }
+  .btn-container {
+    display: grid;
+    width: 100%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    button {
+      width: 80px;
+      height: 80px;
+      margin: 2px;
+      font-size: xxx-large;
+      &:active {
+        border: 2px solid beige;
+      }
+      &:hover {
+        background-color: cadetblue;
+      }
+      &:disabled {
+        color: var.$windows-blue;
+      }
+    }
+  }
+}

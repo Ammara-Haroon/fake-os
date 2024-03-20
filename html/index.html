@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <script type="module" src="../script/script.js" defer></script>
     <script type="module" src="../script/gallery.js" defer></script>
+    <script type="module" src="../script/game.js" defer></script>
 
     <title>FAKE - OS</title>
   </head>
@@ -16,12 +17,14 @@
       alt="windows wallpaper"
     />
     <div class="icons-display">
-      <img
-        id="galleryIcon"
-        class="desktop-icon"
-        src="../assets/gallery.png"
-        alt="Photo Gallery"
-      />
+      <div id="galleryIcon" class="desktop-icon">
+        <img src="../assets/gallery.png" alt="Photo Gallery" />
+        <p>Photo Gallery</p>
+      </div>
+      <div id="gameIcon" class="desktop-icon">
+        <img src="../assets/tictac.jpg" alt="Tic Tac Toe" />
+        <p>Tic Tac Toe</p>
+      </div>
     </div>
     <!-- <div id="galleryModal" class="modal">
       <div class="menu-bar">
@@ -61,7 +64,11 @@
         <button id="galleryRArr">&rarr;</button>
       </div>
     </div> -->
-
+    <!-- <div id="gameModal" class="modal">
+      <button></button><button></button><button></button><button></button
+      ><button></button><button></button><button></button><button></button
+      ><button></button>
+    </div> -->
     <div class="taskbar">
       <button class="btn" id="startButton">
         <img

@@ -2,6 +2,8 @@
 @use "./start-menu-style.scss";
 @use "./gallery-style.scss";
 @use "./menu-bar-style.scss";
+@use "./game-style.scss";
+
 @use "./partials/variables" as var;
 
 * {
@@ -20,13 +22,30 @@
   left: 0;
 }
 
-.desktop-icon {
-  width: 80px;
-  height: 80px;
-  margin: 20px;
+.icons-display {
+  display: flex;
+  justify-items: space-around;
+  flex-direction: column;
+  z-index: -1;
   position: fixed;
-  z-index: 0;
-
+}
+.desktop-icon {
+  width: 60px;
+  //height: 60px;
+  margin: 20px;
+  //position: fixed;
+  //z-index: -1;
+  //border: 1px solid red;
+  img {
+    height: 60px;
+    width: 60px;
+  }
+  p {
+    font-size: 12px;
+    text-wrap: wrap;
+    font-weight: bold;
+    text-align: center;
+  }
   &:hover {
     background-color: rgba(211, 211, 211, 0.3);
   }

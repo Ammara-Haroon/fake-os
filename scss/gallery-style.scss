@@ -1,11 +1,14 @@
 @use "./partials/variables" as var;
 
 .modal {
-  width: 40vw;
+  width: fit-content;
   height: fit-content;
   background-color: rgb(40, 40, 40);
   align-self: center;
   margin: 20px;
+  position: fixed;
+  top: 20%;
+  left: 20%;
   h1 {
     margin: 10px 0px 30px 0px;
     font-family: cursive;
@@ -19,6 +22,8 @@
 }
 
 .gallery {
+  width: 40vw;
+
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,32 +1,6 @@
+import { createMenuBar } from "./script.js";
+
 const galleryIcon = document.getElementById("galleryIcon");
-
-const createMenuButton = (txt, className) => {
-  const menuBtn = document.createElement("p");
-  menuBtn.classList.add(className);
-  const txtNode = document.createTextNode(txt);
-  menuBtn.appendChild(txtNode);
-  return menuBtn;
-};
-const createMenuBar = () => {
-  const menuBar = document.createElement("div");
-  menuBar.classList.add("menu-bar");
-
-  const minBtn = createMenuButton("-", "minimize-btn");
-  menuBar.appendChild(minBtn);
-
-  const szBtn = createMenuButton("\u25A1", "screen-size-btn");
-  menuBar.appendChild(szBtn);
-
-  const closeBtn = createMenuButton("x", "close-btn");
-  menuBar.appendChild(closeBtn);
-
-  closeBtn.addEventListener("click", () => {
-    const modal = document.getElementById("galleryModal");
-    document.querySelector("body").removeChild(modal);
-  });
-
-  return menuBar;
-};
 
 const createImageGallery = () => {
   // const fs = require("fs");
@@ -84,7 +58,7 @@ const createGalleryModal = () => {
   const galleryModal = document.createElement("div");
   galleryModal.classList.add("modal");
   galleryModal.id = "galleryModal";
-  const menuBar = createMenuBar();
+  const menuBar = createMenuBar("galleryModal");
   galleryModal.appendChild(menuBar);
   const heading = document.createElement("h1");
   heading.appendChild(document.createTextNode("Gallery"));

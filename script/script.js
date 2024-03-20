@@ -25,15 +25,30 @@ startBtn.addEventListener("click", () => {
   //console.log("hi");
 });
 
-const closeApp = (target) => {
-  //console.log(target.parentElement.parentElement);
-  const modal = target.parentElement.parentElement;
-  const modalParent = modal.parentElement;
-  modalParent.removeChild(modal);
+const createMenuButton = (txt, className) => {
+  const menuBtn = document.createElement("p");
+  menuBtn.classList.add(className);
+  const txtNode = document.createTextNode(txt);
+  menuBtn.appendChild(txtNode);
+  return menuBtn;
 };
-const closeBtns = document.querySelectorAll(".close-btn");
-closeBtns.forEach((btn) => {
-  btn.addEventListener("click", (event, target) => {
-    closeApp(event.target);
+export const createMenuBar = (modalName) => {
+  const menuBar = document.createElement("div");
+  menuBar.classList.add("menu-bar");
+
+  const minBtn = createMenuButton("-", "minimize-btn");
+  menuBar.appendChild(minBtn);
+
+  const szBtn = createMenuButton("\u25A1", "screen-size-btn");
+  menuBar.appendChild(szBtn);
+
+  const closeBtn = createMenuButton("x", "close-btn");
+  menuBar.appendChild(closeBtn);
+
+  closeBtn.addEventListener("click", () => {
+    const modal = document.getElementById(modalName);
+    document.querySelector("body").removeChild(modal);
   });
-});
+
+  return menuBar;
+};
