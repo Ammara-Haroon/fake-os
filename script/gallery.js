@@ -1,7 +1,8 @@
-import { createMenuBar } from "./script.js";
+import { createMenuBar, createElementWithText } from "./DOM-utils.js";
 
 const galleryIcon = document.getElementById("galleryIcon");
 
+//creates an image gallery
 const createImageGallery = () => {
   // const fs = require("fs");
   // const directoryPath = "../assets/photos/";
@@ -15,31 +16,21 @@ const createImageGallery = () => {
     "../assets/photos/pexels-tamara-velazquez-5199145.jpg",
     "../assets/photos/pexels-thuong-d-14262264.jpg",
   ];
-  const gallery = document.createElement("div");
-  gallery.id = "photoGallery";
-  gallery.classList.add("gallery");
-
+  const gallery = createElementWithText("div", null, "gallery", "photoGallery");
   imgfNames.forEach((fname) => {
-    const img = document.createElement("img");
-    img.classList.add("gallery__item");
+    const img = createElementWithText("img", null, "gallery__item");
     img.src = fname;
     gallery.appendChild(img);
   });
   return gallery;
 };
 
-const createButton = (id, lbl) => {
-  const btn = document.createElement("button");
-  btn.id = id;
-  const txtNode = document.createTextNode(lbl);
-  btn.appendChild(txtNode);
-  return btn;
-};
+//creates the navigation arrows
 const createNavigationArrows = () => {
-  const fArr = createButton("galleryRArr", "-->");
-  const bArr = createButton("galleryLArr", "<--");
-  const arrGp = document.createElement("div");
-  arrGp.classList.add("arrows-group");
+  const fArr = createElementWithText("button", "←", "click-btn", "galleryRArr");
+  const bArr = createElementWithText("button", "→", "click-btn", "galleryLArr");
+
+  const arrGp = createElementWithText("div", null, "arrows-group");
   arrGp.appendChild(fArr);
   arrGp.appendChild(bArr);
 
@@ -49,29 +40,34 @@ const createNavigationArrows = () => {
 let offset = 0;
 const NUMBER_OF_DISPLAY_IMAGES = 1;
 
+//creates the gallery modal
 const createGalleryModal = () => {
   if (document.querySelector("#galleryModal")) {
     return;
   }
 
   offset = 0;
-  const galleryModal = document.createElement("div");
-  galleryModal.classList.add("modal");
-  galleryModal.id = "galleryModal";
-  const menuBar = createMenuBar("galleryModal");
+  const galleryModal = createElementWithText(
+    "div",
+    null,
+    "modal",
+    "galleryModal"
+  );
+  //adds a menu bar
+  const menuBar = createMenuBar("galleryModal", "Photo Gallery");
   galleryModal.appendChild(menuBar);
-  const heading = document.createElement("h1");
-  heading.appendChild(document.createTextNode("Gallery"));
-  galleryModal.appendChild(heading);
+  //adds a gallery
   const imgGallery = createImageGallery();
   galleryModal.appendChild(imgGallery);
+  //add navigation arrows
   const navArrows = createNavigationArrows();
   galleryModal.appendChild(navArrows);
 
+  //add it to the desktop screen
   document.getElementsByTagName("body")[0].appendChild(galleryModal);
 
+  //make a few images visible at a time
   const gallery = document.getElementsByClassName("gallery__item");
-
   for (let i = 0; i < NUMBER_OF_DISPLAY_IMAGES; ++i) {
     gallery[i].classList.add("gallery__item--active");
   }
@@ -79,6 +75,7 @@ const createGalleryModal = () => {
   const bkwdArr = document.getElementById("galleryLArr");
   const fwdArr = document.getElementById("galleryRArr");
 
+  //backward arrow displays the previous photo
   bkwdArr.addEventListener("click", function () {
     const gallery = document.getElementsByClassName("gallery__item");
     let count = 0;
@@ -93,17 +90,9 @@ const createGalleryModal = () => {
       );
       count++;
     }
-
-    // for (let i = 0; i < gallery.length; ++i) {
-    //   console.log(
-    //     i,
-    //     gallery[i].classList.contains("gallery__item--active")
-    //       ? "active"
-    //       : "not there"
-    //   );
-    // }
   });
 
+  //forward arrow display the next photo by changing active class property of images
   fwdArr.addEventListener("click", function () {
     const gallery = document.getElementsByClassName("gallery__item");
     let count = 0;
@@ -118,70 +107,10 @@ const createGalleryModal = () => {
       );
       count++;
     }
-
-    // for (let i = 0; i < gallery.length; ++i) {
-    //   console.log(
-    //     i,
-    //     gallery[i].classList.contains("gallery__item--active")
-    //       ? "active"
-    //       : "not there"
-    //   );
-    // }
   });
 };
-galleryIcon.addEventListener("click", () => {
+
+//open up a gallery when desktop icon is clicked
+galleryIcon.addEventListener("dblclick", () => {
   createGalleryModal();
 });
-
-//
-// const gallery = document.getElementsByClassName("gallery__item");
-// for (let i = 0; i < NUMBER_OF_DISPLAY_IMAGES; ++i) {
-//   gallery[i].classList.add("gallery__item--active");
-// }
-// bkwdArr.addEventListener("click", function () {
-//   const gallery = document.getElementsByClassName("gallery__item");
-//   let count = 0;
-//   offset = offset - 1 < 0 ? gallery.length - 1 : offset - 1;
-//   gallery[
-//     (offset + NUMBER_OF_DISPLAY_IMAGES) % gallery.length
-//   ].classList.remove("gallery__item--active");
-
-//   while (count < NUMBER_OF_DISPLAY_IMAGES) {
-//     gallery[(offset + count) % gallery.length].classList.add(
-//       "gallery__item--active"
-//     );
-//     count++;
-//   }
-//   for (let i = 0; i < gallery.length; ++i) {
-//     console.log(
-//       i,
-//       gallery[i].classList.contains("gallery__item--active")
-//         ? "active"
-//         : "not there"
-//     );
-//   }
-// });
-
-// fwdArr.addEventListener("click", function () {
-//   const gallery = document.getElementsByClassName("gallery__item");
-//   let count = 0;
-
-//   gallery[offset].classList.remove("gallery__item--active");
-
-//   offset = (offset + 1) % gallery.length;
-
-//   while (count < NUMBER_OF_DISPLAY_IMAGES) {
-//     gallery[(offset + count) % gallery.length].classList.add(
-//       "gallery__item--active"
-//     );
-//     count++;
-//   }
-//   for (let i = 0; i < gallery.length; ++i) {
-//     console.log(
-//       i,
-//       gallery[i].classList.contains("gallery__item--active")
-//         ? "active"
-//         : "not there"
-//     );
-//   }
-// });

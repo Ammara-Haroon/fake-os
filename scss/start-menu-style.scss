@@ -32,13 +32,11 @@
 
     div {
       display: flex;
-      //border: 1px solid red;
       align-items: center;
       padding: 8px;
       img {
         width: 1.5em;
         height: 1.5em;
-        //border: 1px solid blue;
       }
       p {
         //border: 1px solid salmon;
@@ -53,7 +51,6 @@
   }
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: flex;
 }

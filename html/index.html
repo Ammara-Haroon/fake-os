@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
-    <script type="module" src="../script/script.js" defer></script>
+    <script type="module" src="../script/main.js" defer></script>
     <script type="module" src="../script/gallery.js" defer></script>
     <script type="module" src="../script/game.js" defer></script>
+    <script type="module" src="../script/forex.js" defer></script>
+    <script type="module" src="../script/DOM-utils.js" defer></script>
 
     <title>FAKE - OS</title>
   </head>
@@ -16,6 +18,7 @@
       src="../assets/windows-98-wallpapers.jpg"
       alt="windows wallpaper"
     />
+
     <div class="icons-display">
       <div id="galleryIcon" class="desktop-icon">
         <img src="../assets/gallery.png" alt="Photo Gallery" />
@@ -25,105 +28,77 @@
         <img src="../assets/tictac.jpg" alt="Tic Tac Toe" />
         <p>Tic Tac Toe</p>
       </div>
+      <div id="forexIcon" class="desktop-icon">
+        <img
+          src="../assets/currency-exchange-icon.png"
+          alt="Currency Converter"
+        />
+        <p>Currency Converter</p>
+      </div>
     </div>
-    <!-- <div id="galleryModal" class="modal">
-      <div class="menu-bar">
-        <p class="minimize-btn">-</p>
-        <p class="screen-size-btn">&square;</p>
-        <p class="close-btn">x</p>
-      </div>
-      <h1>Gallery</h1>
-      <div id="photoGallery" class="gallery">
-        <img
-          class="gallery__item"
-          src="../assets/pexels-ave-calvar-martinez-7878167.jpg"
-        />
-        <img
-          class="gallery__item"
-          src="../assets/pexels-catalina-carvajal-herrera-9677898.jpg"
-        />
-        <img
-          class="gallery__item active"
-          src="../assets/pexels-joseba-garcia-moya-18133772.jpg"
-        />
-        <img
-          class="gallery__item"
-          src="../assets/pexels-tamara-velazquez-5199145.jpg"
-        />
-        <img
-          class="gallery__item"
-          src="../assets/pexels-thuong-d-14262264.jpg"
-        />
-        <img
-          class="gallery__item"
-          src="../assets/pexels-vanessa-martins-11072953.jpg"
-        />
-      </div>
-      <div class="arrows-group">
-        <button id="galleryLArr">&larr;</button>
-        <button id="galleryRArr">&rarr;</button>
-      </div>
-    </div> -->
-    <!-- <div id="gameModal" class="modal">
-      <button></button><button></button><button></button><button></button
-      ><button></button><button></button><button></button><button></button
-      ><button></button>
-    </div> -->
+
     <div class="taskbar">
-      <button class="btn" id="startButton">
+      <button class="btn sb" id="startButton">
         <img
-          class="logo"
+          class="logo sb"
           src="../assets/windows-logo.png"
           alt="Windows 10 Can Now Run A Native Linux Shell Using A - Infinity War Spoilers Without Context @clipartmax.com"
         />
-        <p>Start</p>
+        <p class="sb">Start</p>
       </button>
-      <div id="startMenu" class="start-menu">
-        <span class="banner">Windows 98</span>
-        <div class="menu-items">
-          <div>
-            <img src="../assets/programs.png" alt="Programs" />
-            <p>Programs</p>
+      <div id="startMenu" class="start-menu sm">
+        <span class="banner sm">Windows 98</span>
+        <div class="menu-items sm">
+          <div class="sm">
+            <img class="sm" src="../assets/programs.png" alt="Programs" />
+            <p class="sm">Programs</p>
           </div>
-          <div>
-            <img src="../assets/photos.png" alt="Photos" />
-            <p>Photos</p>
+          <div class="sm">
+            <img class="sm" src="../assets/photos.png" alt="Photos" />
+            <p class="sm">Photos</p>
           </div>
-          <div>
-            <img src="../assets/applications.png" alt="Applications" />
-            <p>Applications</p>
+          <div class="sm">
+            <img
+              class="sm"
+              src="../assets/applications.png"
+              alt="Applications"
+            />
+            <p class="sm">Applications</p>
           </div>
-          <div>
-            <img src="../assets/mshearts.png" alt="Games" />
-            <p>Games</p>
+          <div class="sm">
+            <img class="sm" src="../assets/mshearts.png" alt="Games" />
+            <p class="sm">Games</p>
           </div>
-          <div>
-            <img src="../assets/settings_gear_cool-4.png" alt="Settings" />
-            <p>Settings</p>
+          <div class="sm">
+            <img
+              class="sm"
+              src="../assets/settings_gear_cool-4.png"
+              alt="Settings"
+            />
+            <p class="sm">Settings</p>
           </div>
-          <div>
-            <img src="../assets/find.png" alt="find" />
-            <p>Find</p>
+          <div class="sm">
+            <img class="sm" src="../assets/find.png" alt="find" />
+            <p class="sm">Find</p>
           </div>
-          <div>
-            <img src="../assets/help_book_cool-4.png" alt="Help" />
-            <p>Help</p>
+          <div class="sm">
+            <img class="sm" src="../assets/help_book_cool-4.png" alt="Help" />
+            <p class="sm">Help</p>
           </div>
-          <div>
-            <img src="../assets/run.png" alt="run" />
-            <p>Run</p>
+          <div class="sm">
+            <img class="sm" src="../assets/run.png" alt="run" />
+            <p class="sm">Run</p>
           </div>
-          <div>
-            <img src="../assets/logoff.png" alt="log off" />
-            <p>Log off</p>
+          <div class="sm">
+            <img class="sm" src="../assets/logoff.png" alt="log off" />
+            <p class="sm">Log off</p>
           </div>
-          <div>
-            <img src="../assets/shutdown.png" alt="" />
-            <p>Shutdown</p>
+          <div class="sm">
+            <img class="sm" src="../assets/shutdown.png" alt="" />
+            <p class="sm">Shutdown</p>
           </div>
         </div>
       </div>
-      <div></div>
       <div class="clock"><p id="time" class="time"></p></div>
     </div>
   </body>
