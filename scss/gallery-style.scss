@@ -2,25 +2,25 @@
 
 .gallery {
   width: 40vw;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   overflow: hidden;
   gap: 40px;
-  z-index: 1;
-  //border: 1px solid hotpink;
+  //border: 1px solid blue;
   margin: 50px;
   &__item {
+    //  border: 1px solid hotpink;
     cursor: pointer;
     border-radius: 4px;
     transition: 0.3s ease-in-out;
     visibility: hidden;
     display: none;
-    width: 200px;
-    height: 200px;
 
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
     &:hover {
       transform: scale(1.1);
     }
@@ -35,7 +35,7 @@
 .arrows-group {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin: 10px;
   #galleryLArr {
     width: fit-content;

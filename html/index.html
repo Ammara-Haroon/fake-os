@@ -9,12 +9,11 @@
     <script type="module" src="../script/game.js" defer></script>
     <script type="module" src="../script/forex.js" defer></script>
     <script type="module" src="../script/DOM-utils.js" defer></script>
-
     <title>FAKE - OS</title>
   </head>
   <body>
     <img
-      class="wallpaper"
+      class="wallpaper unselectable"
       src="../assets/windows-98-wallpapers.jpg"
       alt="windows wallpaper"
     />
@@ -46,60 +45,56 @@
         />
         <p class="sb">Start</p>
       </button>
-      <div id="startMenu" class="start-menu sm">
-        <span class="banner sm">Windows 98</span>
-        <div class="menu-items sm">
-          <div class="sm">
-            <img class="sm" src="../assets/programs.png" alt="Programs" />
-            <p class="sm">Programs</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/photos.png" alt="Photos" />
-            <p class="sm">Photos</p>
-          </div>
-          <div class="sm">
-            <img
-              class="sm"
-              src="../assets/applications.png"
-              alt="Applications"
-            />
-            <p class="sm">Applications</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/mshearts.png" alt="Games" />
-            <p class="sm">Games</p>
-          </div>
-          <div class="sm">
-            <img
-              class="sm"
-              src="../assets/settings_gear_cool-4.png"
-              alt="Settings"
-            />
-            <p class="sm">Settings</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/find.png" alt="find" />
-            <p class="sm">Find</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/help_book_cool-4.png" alt="Help" />
-            <p class="sm">Help</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/run.png" alt="run" />
-            <p class="sm">Run</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/logoff.png" alt="log off" />
-            <p class="sm">Log off</p>
-          </div>
-          <div class="sm">
-            <img class="sm" src="../assets/shutdown.png" alt="" />
-            <p class="sm">Shutdown</p>
-          </div>
+      <div class="clock"><p id="time" class="time"></p></div>
+    </div>
+    <div id="startMenu" class="start-menu sm">
+      <span class="banner sm">Windows 98</span>
+      <div class="menu-items sm">
+        <div class="sm">
+          <img class="sm" src="../assets/programs.png" alt="Programs" />
+          <p class="sm">Programs</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/photos.png" alt="Photos" />
+          <p class="sm">Photos</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/applications.png" alt="Applications" />
+          <p class="sm">Applications</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/mshearts.png" alt="Games" />
+          <p class="sm">Games</p>
+        </div>
+        <div class="sm">
+          <img
+            class="sm"
+            src="../assets/settings_gear_cool-4.png"
+            alt="Settings"
+          />
+          <p class="sm">Settings</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/find.png" alt="find" />
+          <p class="sm">Find</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/help_book_cool-4.png" alt="Help" />
+          <p class="sm">Help</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/run.png" alt="run" />
+          <p class="sm">Run</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/logoff.png" alt="log off" />
+          <p class="sm">Log off</p>
+        </div>
+        <div class="sm">
+          <img class="sm" src="../assets/shutdown.png" alt="" />
+          <p class="sm">Shutdown</p>
         </div>
       </div>
-      <div class="clock"><p id="time" class="time"></p></div>
     </div>
   </body>
 </html>

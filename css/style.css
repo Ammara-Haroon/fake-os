@@ -58,7 +58,7 @@
   border-left: 2px solid white;
   border-bottom: 2px solid grey;
   border-right: 2px solid grey;
-  z-index: 1;
+  z-index: 0;
   display: none;
 }
 .start-menu .banner {
@@ -100,6 +100,7 @@
 
 .show {
   display: flex;
+  z-index: 5;
 }
 
 .gallery {
@@ -110,7 +111,6 @@
   flex-wrap: nowrap;
   overflow: hidden;
   gap: 40px;
-  z-index: 1;
   margin: 50px;
 }
 .gallery__item {
@@ -119,8 +119,9 @@
   transition: 0.3s ease-in-out;
   visibility: hidden;
   display: none;
-  width: 200px;
-  height: 200px;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
 }
 .gallery__item:hover {
   transform: scale(1.1);
@@ -135,7 +136,7 @@
 .arrows-group {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin: 10px;
 }
 .arrows-group #galleryLArr {
@@ -284,11 +285,19 @@
   background-color: rgb(40, 40, 40);
   align-self: center;
   margin: 20px;
-  position: fixed;
+  position: absolute;
   top: 20%;
   left: 20%;
   border: 5px solid black;
   border-radius: 10px;
+  z-index: 0;
+}
+.modal__maximized {
+  width: calc(100vw - 15px);
+  height: calc(100vh - 50px);
+  left: 0;
+  top: 0;
+  margin: 0;
 }
 .modal .click-btn {
   background-color: #0e102f;
@@ -306,6 +315,10 @@
 }
 .modal .click-btn:hover {
   color: red;
+}
+
+html {
+  user-select: none;
 }
 
 /*# sourceMappingURL=style.css.map */

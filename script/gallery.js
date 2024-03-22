@@ -1,4 +1,8 @@
-import { createMenuBar, createElementWithText } from "./DOM-utils.js";
+import {
+  createMenuBar,
+  createElementWithText,
+  makeModalWindowActive,
+} from "./DOM-utils.js";
 
 const galleryIcon = document.getElementById("galleryIcon");
 
@@ -22,24 +26,41 @@ const createImageGallery = () => {
     img.src = fname;
     gallery.appendChild(img);
   });
+
+  gallery.firstChild.classList.add("gallery__item--active");
+
   return gallery;
 };
 
 //creates the navigation arrows
 const createNavigationArrows = () => {
-  const fArr = createElementWithText("button", "←", "click-btn", "galleryRArr");
-  const bArr = createElementWithText("button", "→", "click-btn", "galleryLArr");
-
+  const bArr = createElementWithText("button", "←", "click-btn", "galleryLArr");
+  const fArr = createElementWithText("button", "→", "click-btn", "galleryRArr");
   const arrGp = createElementWithText("div", null, "arrows-group");
-  arrGp.appendChild(fArr);
   arrGp.appendChild(bArr);
-
+  arrGp.appendChild(fArr);
+  //backward arrow displays the previous photo
+  bArr.addEventListener("click", goBackwards);
+  //forward arrow display the next photo by changing active class property of images
+  fArr.addEventListener("click", goForwards);
   return arrGp;
 };
 
 let offset = 0;
-const NUMBER_OF_DISPLAY_IMAGES = 1;
+//const NUMBER_OF_DISPLAY_IMAGES = 1;
 
+const goForwards = () => {
+  const gallery = document.getElementsByClassName("gallery__item");
+  gallery[offset].classList.remove("gallery__item--active");
+  offset = (offset + 1) % gallery.length;
+  gallery[offset].classList.add("gallery__item--active");
+};
+const goBackwards = () => {
+  const gallery = document.getElementsByClassName("gallery__item");
+  gallery[offset].classList.remove("gallery__item--active");
+  offset = offset - 1 < 0 ? gallery.length - 1 : offset - 1;
+  gallery[offset % gallery.length].classList.add("gallery__item--active");
+};
 //creates the gallery modal
 const createGalleryModal = () => {
   if (document.querySelector("#galleryModal")) {
@@ -65,49 +86,13 @@ const createGalleryModal = () => {
 
   //add it to the desktop screen
   document.getElementsByTagName("body")[0].appendChild(galleryModal);
+  makeModalWindowActive(galleryModal);
 
-  //make a few images visible at a time
-  const gallery = document.getElementsByClassName("gallery__item");
-  for (let i = 0; i < NUMBER_OF_DISPLAY_IMAGES; ++i) {
-    gallery[i].classList.add("gallery__item--active");
-  }
-
-  const bkwdArr = document.getElementById("galleryLArr");
-  const fwdArr = document.getElementById("galleryRArr");
-
-  //backward arrow displays the previous photo
-  bkwdArr.addEventListener("click", function () {
-    const gallery = document.getElementsByClassName("gallery__item");
-    let count = 0;
-    offset = offset - 1 < 0 ? gallery.length - 1 : offset - 1;
-    gallery[
-      (offset + NUMBER_OF_DISPLAY_IMAGES) % gallery.length
-    ].classList.remove("gallery__item--active");
-
-    while (count < NUMBER_OF_DISPLAY_IMAGES) {
-      gallery[(offset + count) % gallery.length].classList.add(
-        "gallery__item--active"
-      );
-      count++;
-    }
+  galleryModal.addEventListener("click", () => {
+    //console.log("gallery got clicked");
+    makeModalWindowActive(galleryModal);
   });
-
-  //forward arrow display the next photo by changing active class property of images
-  fwdArr.addEventListener("click", function () {
-    const gallery = document.getElementsByClassName("gallery__item");
-    let count = 0;
-
-    gallery[offset].classList.remove("gallery__item--active");
-
-    offset = (offset + 1) % gallery.length;
-
-    while (count < NUMBER_OF_DISPLAY_IMAGES) {
-      gallery[(offset + count) % gallery.length].classList.add(
-        "gallery__item--active"
-      );
-      count++;
-    }
-  });
+  //galleryModal.classList.add("modal__maximized");
 };
 
 //open up a gallery when desktop icon is clicked

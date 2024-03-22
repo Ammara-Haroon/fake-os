@@ -1,4 +1,8 @@
-import { createMenuBar, createElementWithText } from "./DOM-utils.js";
+import {
+  createMenuBar,
+  createElementWithText,
+  makeModalWindowActive,
+} from "./DOM-utils.js";
 
 const forexIcon = document.getElementById("forexIcon");
 
@@ -129,6 +133,11 @@ const createCurrencyConverter = () => {
   currencyConverterModal.appendChild(form);
   //adds the app to desktop
   document.getElementsByTagName("body")[0].appendChild(currencyConverterModal);
+  makeModalWindowActive(currencyConverterModal);
+  currencyConverterModal.addEventListener("click", () => {
+    //console.log("cc got clicked");
+    makeModalWindowActive(currencyConverterModal);
+  });
 };
 
 //when icon is clicked open up the app

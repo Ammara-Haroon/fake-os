@@ -20,6 +20,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  //user-select: none;
 }
 
 .icons-display {
@@ -54,12 +55,19 @@
   background-color: rgb(40, 40, 40);
   align-self: center;
   margin: 20px;
-  position: fixed;
+  position: absolute;
   top: 20%;
   left: 20%;
   border: 5px solid black;
   border-radius: 10px;
-
+  z-index: 0;
+  &__maximized {
+    width: calc(100vw - 15px);
+    height: calc(100vh - 50px);
+    left: 0;
+    top: 0;
+    margin: 0;
+  }
   .click-btn {
     background-color: var.$windows-blue;
     color: beige;
@@ -77,4 +85,7 @@
       color: red;
     }
   }
+}
+html {
+  user-select: none;
 }

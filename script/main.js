@@ -1,3 +1,5 @@
+import { makeModalWindowActive } from "./DOM-utils.js";
+
 const clockTime = document.getElementById("time");
 //sets clock to new time
 const setClockTime = () => {
@@ -22,6 +24,7 @@ const startMenu = document.getElementById("startMenu");
 //opens and closes the start menu by toggling class
 startBtn.addEventListener("click", (e) => {
   startMenu.classList.toggle("show");
+  //console.log(window.getComputedStyle(startMenu).zIndex);
 });
 
 const body = document.querySelector("body");
@@ -32,5 +35,8 @@ body.addEventListener("click", (e) => {
     !e.target.classList.contains("sb")
   ) {
     startMenu.classList.remove("show");
+    //console.log(window.getComputedStyle(startMenu).zIndex);
   }
 });
+
+///////////////////

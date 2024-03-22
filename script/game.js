@@ -1,4 +1,8 @@
-import { createElementWithText, createMenuBar } from "./DOM-utils.js";
+import {
+  createMenuBar,
+  createElementWithText,
+  makeModalWindowActive,
+} from "./DOM-utils.js";
 
 const NUMBER_OF_SQUARES = 9;
 const gameIcon = document.getElementById("gameIcon");
@@ -88,6 +92,12 @@ const createTicTacToe = () => {
 
   //display the modal on desktop
   document.getElementsByTagName("body")[0].appendChild(gameModal);
+  makeModalWindowActive(gameModal);
+
+  gameModal.addEventListener("click", () => {
+    //console.log("game got clicked");
+    makeModalWindowActive(gameModal);
+  });
 };
 
 //opens up a game when icon is clicked
