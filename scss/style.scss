@@ -61,7 +61,21 @@
   border: 5px solid black;
   border-radius: 10px;
   z-index: 0;
-  &__maximized {
+  &--gallery {
+    width: 50vw;
+    height: 70vh;
+  }
+  &--game {
+    text-align: center;
+    height: 400px;
+    width: 300px;
+  }
+  &--forex {
+    text-align: center;
+    height: 300px;
+    width: 650px;
+  }
+  &--maximized {
     width: calc(100vw - 15px);
     height: calc(100vh - 50px);
     left: 0;

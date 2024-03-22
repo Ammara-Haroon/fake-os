@@ -74,6 +74,7 @@ const createGalleryModal = () => {
     "modal",
     "galleryModal"
   );
+  galleryModal.classList.add("modal--gallery");
   //adds a menu bar
   const menuBar = createMenuBar("galleryModal", "Photo Gallery");
   galleryModal.appendChild(menuBar);
@@ -92,7 +93,7 @@ const createGalleryModal = () => {
     //console.log("gallery got clicked");
     makeModalWindowActive(galleryModal);
   });
-  //galleryModal.classList.add("modal__maximized");
+  //galleryModal.classList.add("modal--maximized");
 };
 
 //open up a gallery when desktop icon is clicked

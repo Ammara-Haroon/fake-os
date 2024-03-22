@@ -40,6 +40,14 @@ export const createMenuBar = (modalName, appName) => {
   container.appendChild(closeBtn);
   menuBar.appendChild(container);
 
+  //adding event listener to resize button
+  szBtn.addEventListener("click", () => {
+    const modal = document.getElementById(modalName);
+    modal.classList.toggle("modal--maximized");
+    modal.style.top = "0";
+    modal.style.left = "0";
+  });
+
   //adding event listener to close button
   closeBtn.addEventListener("click", () => {
     const modal = document.getElementById(modalName);

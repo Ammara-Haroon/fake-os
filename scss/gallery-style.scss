@@ -1,42 +1,39 @@
 @use "./partials/variables" as var;
 
 .gallery {
-  width: 40vw;
+  width: 100%;
+  height: calc(100% - 100px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  gap: 40px;
-  //border: 1px solid blue;
-  margin: 50px;
+
   &__item {
-    //  border: 1px solid hotpink;
+    border: 3px solid black;
     cursor: pointer;
     border-radius: 4px;
     transition: 0.3s ease-in-out;
     visibility: hidden;
     display: none;
-
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
+    margin: 20px;
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     &--active {
       visibility: visible;
       display: inline;
-      width: 200px;
-      height: 200px;
+      width: 75%;
+      height: 90%;
+      object-fit: cover;
     }
   }
 }
 .arrows-group {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin: 10px;
+  align-items: end;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
   #galleryLArr {
     width: fit-content;
     border: 5px solid black;

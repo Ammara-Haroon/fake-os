@@ -104,40 +104,39 @@
 }
 
 .gallery {
-  width: 40vw;
+  width: 100%;
+  height: calc(100% - 100px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  gap: 40px;
-  margin: 50px;
 }
 .gallery__item {
+  border: 3px solid black;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.3s ease-in-out;
   visibility: hidden;
   display: none;
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
+  margin: 20px;
 }
 .gallery__item:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .gallery__item--active {
   visibility: visible;
   display: inline;
-  width: 200px;
-  height: 200px;
+  width: 75%;
+  height: 90%;
+  object-fit: cover;
 }
 
 .arrows-group {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin: 10px;
+  align-items: end;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .arrows-group #galleryLArr {
   width: fit-content;
@@ -173,52 +172,45 @@
   font-weight: bold;
 }
 
-#gameModal {
-  text-align: center;
-}
-#gameModal .btn-container {
+.btn-container {
   display: grid;
-  width: 100%;
-  height: 80%;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 4px;
+  height: calc(100% - 80px);
+  width: 100%;
   margin-top: 2px;
 }
-#gameModal .btn-container .game-btn {
-  width: 80px;
-  height: 80px;
-  margin: 2px;
+.btn-container .game-btn {
   font-size: xxx-large;
 }
-#gameModal .btn-container .game-btn:active {
+.btn-container .game-btn:active {
   border: 2px solid beige;
 }
-#gameModal .btn-container .game-btn:hover {
+.btn-container .game-btn:hover {
   background-color: cadetblue;
 }
-#gameModal .btn-container .game-btn:disabled {
+.btn-container .game-btn:disabled {
   color: #0e102f;
 }
 
-#currencyConverterModal {
-  text-align: center;
-}
-#currencyConverterModal form {
+form {
   display: flex;
   flex-direction: column;
-  height: fit-content;
 }
-#currencyConverterModal form label {
+form label {
   color: beige;
   font-weight: bold;
   padding: 5px;
   text-align: left;
 }
-#currencyConverterModal form div {
+form div {
   border: 4px solid #0e102f;
   display: flex;
   margin: 10px;
+  width: fit-content;
 }
-#currencyConverterModal form div .form-text {
+form div .form-text {
   width: 500px;
   text-align: right;
   margin: 10px;
@@ -226,14 +218,14 @@
   font-size: 25px;
   font-weight: bold;
 }
-#currencyConverterModal form div .output {
+form div .output {
   background-color: lightgray;
   padding-right: 0.3em;
   text-overflow: ellipsis;
   text-wrap: stable;
   height: fit-content;
 }
-#currencyConverterModal form div select {
+form div select {
   margin: 10px;
 }
 
@@ -292,7 +284,21 @@
   border-radius: 10px;
   z-index: 0;
 }
-.modal__maximized {
+.modal--gallery {
+  width: 50vw;
+  height: 70vh;
+}
+.modal--game {
+  text-align: center;
+  height: 400px;
+  width: 300px;
+}
+.modal--forex {
+  text-align: center;
+  height: 300px;
+  width: 650px;
+}
+.modal--maximized {
   width: calc(100vw - 15px);
   height: calc(100vh - 50px);
   left: 0;

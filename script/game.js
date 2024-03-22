@@ -64,6 +64,7 @@ const createTicTacToe = () => {
 
   turn = "O";
   const gameModal = createElementWithText("div", null, "modal", "gameModal");
+  gameModal.classList.add("modal--game");
   //add menu bar
   const menuBar = createMenuBar("gameModal", "Tic - Tac - Toe");
   gameModal.appendChild(menuBar);
@@ -98,6 +99,8 @@ const createTicTacToe = () => {
     //console.log("game got clicked");
     makeModalWindowActive(gameModal);
   });
+
+  //gameModal.classList.add("modal--maximized");
 };
 
 //opens up a game when icon is clicked

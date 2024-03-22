@@ -1,44 +1,23 @@
 @use "./partials/variables" as var;
 
-#gameModal {
-  text-align: center;
-
-  .btn-container {
-    display: grid;
-    width: 100%;
-    height: 80%;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 2px;
-    .game-btn {
-      width: 80px;
-      height: 80px;
-      margin: 2px;
-      font-size: xxx-large;
-      &:active {
-        border: 2px solid beige;
-      }
-      &:hover {
-        background-color: cadetblue;
-      }
-      &:disabled {
-        color: var.$windows-blue;
-      }
+.btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 4px;
+  height: calc(100% - 80px);
+  width: 100%;
+  margin-top: 2px;
+  .game-btn {
+    font-size: xxx-large;
+    &:active {
+      border: 2px solid beige;
+    }
+    &:hover {
+      background-color: cadetblue;
+    }
+    &:disabled {
+      color: var.$windows-blue;
     }
   }
-
-  // .reset-btn {
-  //   background-color: var.$windows-blue;
-  //   color: beige;
-  //   font-weight: bold;
-  //   border-radius: 8px;
-  //   //padding: 5px;
-  //   text-align: center;
-  //   font-size: 20px;
-  //   padding: 5px 50px 5px 50px;
-  //   text-align: center;
-  //   width: fit-content;
-  //   &:hover {
-  //     color: red;
-  //   }
-  // }
 }

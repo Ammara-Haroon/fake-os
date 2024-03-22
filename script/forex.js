@@ -125,6 +125,7 @@ const createCurrencyConverter = () => {
     "modal",
     "currencyConverterModal"
   );
+  currencyConverterModal.classList.add("modal--forex");
   //adds a menu bar
   const menuBar = createMenuBar("currencyConverterModal", "Currency Converter");
   currencyConverterModal.appendChild(menuBar);
@@ -137,6 +138,8 @@ const createCurrencyConverter = () => {
   currencyConverterModal.addEventListener("click", () => {
     //console.log("cc got clicked");
     makeModalWindowActive(currencyConverterModal);
+
+    //currencyConverterModal.classList.add("modal--maximized");
   });
 };
 
