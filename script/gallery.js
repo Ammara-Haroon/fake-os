@@ -100,3 +100,7 @@ const createGalleryModal = () => {
 galleryIcon.addEventListener("dblclick", () => {
   createGalleryModal();
 });
+
+document.querySelector("#galleryLink").addEventListener("click", () => {
+  createGalleryModal();
+});

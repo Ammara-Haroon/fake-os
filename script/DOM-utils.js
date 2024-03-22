@@ -54,6 +54,17 @@ export const createMenuBar = (modalName, appName) => {
     document.querySelector("body").removeChild(modal);
   });
 
+  minBtn.addEventListener("click", () => {
+    const modal = document.getElementById(modalName);
+    modal.style.display = "none";
+    const tray = document.querySelector("#iconTray");
+    const tab = createElementWithText("p", appName, "tab");
+    tray.appendChild(tab);
+    tab.addEventListener("click", () => {
+      modal.style.display = "block";
+      tray.removeChild(tab);
+    });
+  });
   /////////////////////////////
   //on dragging change modals position
   const onDrag = ({ movementX, movementY }) => {
