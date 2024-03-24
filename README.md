@@ -39,15 +39,15 @@ HTML, SCSS, compiled CSS, JavaScript and Image files (assets) are maintained in 
 
 ### Styling:
 
-- The background image is WIndows 98 wallpaper that fits the whole viewport at all orientations. It has z-index value euqual to -2 (the lowest) to make sure the wallpaper always appears in the background.
+- The background image is Windows 98 wallpaper that fits the whole viewport at all orientations. It has z-index value euqual to -2 (the lowest) to make sure the wallpaper always appears in the background.
 - Start Menu button is on the bottom left of the page.
 - A running clock that displays time and updates time is on the bottom right corner.
 - Desktop icons are towards to top right part of the desktop.
 - The taskbar is at the bottom of the desktop. It displays app names when they are minimised.
-- All the design and styling of the icons, start menu, buttons, clock and apps is done in SASS and is foucesed to copy the windowns 98 styling as much as possible.
-- Desktp apps open up usually around the center area of the desktop.
-- Each app has a askbar with close, maximise and minimise button.
-- Each app has a consistenet color scheme.
+- All the design and styling of the icons, start menu, buttons, clock and apps is done in SASS and is foucused to copy the windowns 98 styling as much as possible.
+- Desktop apps open up usually around the center area of the desktop.
+- Each app has a menubar with close, maximise and minimise buttons.
+- Each app has a consistent color scheme.
 
 ### Features
 
@@ -63,11 +63,11 @@ The clock is made active in real time by getting the latest time each second usi
 
 #### Desktop Icons
 
-The desktop icons are all linked to event listeners in Javascript to open up their respective tags. Whenever an icon is double-clicked Javascript created the respective modal and displays it to the user.
+The desktop icons are all linked to event listeners in Javascript to open up their respective apps. Whenever an icon is double-clicked, Javascript creates the respective modal and displays it to the user.
 
 #### Apps
 
-All th apps are actually modals that are built in javascript on the fly and displayed to the user.Only one instance of the app is open at one time.
+All th apps are actually modals that are built in javascript on the fly and displayed to the user. Only one instance of the app is open at a time.
 
 ##### App Menubar
 
@@ -93,10 +93,10 @@ This app uses api calls to get latest currency exchange data and displays it to 
 
 - All the app windows are **draggable**. This is achieved through mouse event listeners linked to the menu bar of app window. The "mousedown", "mousemove" and "mouseup" events are used to follow the mouse movement and move the app window to a new position.
 - Among Start Menu icons and tabs, clicking photo tab actually opens up the Photo Gallery app.
-- The fake operating system tries to simulate the active window effect. The app window that is clicked becomes active and is displayed on top of other windows. Even the start menu opens up on top of a window if it is the clicked most recently.
+- The fake operating system tries to simulate the active window effect. The app window that is clicked becomes active and is displayed on top of other windows. Even the start menu opens up on top of a window if it is the one clicked most recently.
 - Start menu closes when either start button is clicked or any other part of the desktop is clicked.
 
 ## Future Direction
 
 1. The dragging functionality is not as smooth as expected. Strategy needs to be reexamined.
-2. Start Menu tabs like applications can open sub-menu which selectable links.
+2. Start Menu tabs like applications should open sub-menu which selectable links.
