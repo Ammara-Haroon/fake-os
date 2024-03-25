@@ -1,0 +1,23 @@
+@use "./partials/variables" as var;
+
+.btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 4px;
+  height: calc(100% - 80px);
+  width: 100%;
+  margin-top: 2px;
+  .game-btn {
+    font-size: xxx-large;
+    &:active {
+      border: 2px solid beige;
+    }
+    &:hover {
+      background-color: cadetblue;
+    }
+    &:disabled {
+      color: var.$windows-blue;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@mixin dbl-colored-border($colTL, $colBR) {
+  border-bottom: 2px solid $colBR;
+  border-right: 2px solid $colBR;
+  border-top: 2px solid $colTL;
+  border-left: 2px solid $colTL;
+}
