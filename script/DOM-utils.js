@@ -23,20 +23,19 @@ export const createElementWithText = (
 
 //creates menu bar with a title and three buttons
 export const createMenuBar = (modalName, appName) => {
-  const menuBar = document.createElement("div");
-  menuBar.classList.add("menu-bar");
+  const menuBar = createElementWithText("div", null, "menu-bar");
 
   const title = createElementWithText("p", appName, "title");
   menuBar.appendChild(title);
 
   const container = document.createElement("div");
-  const minBtn = createElementWithText("p", "-", "minimize-btn");
+  const minBtn = createElementWithText("p", "-", "btn");
   container.appendChild(minBtn);
 
-  const szBtn = createElementWithText("p", "\u25A1", "screen-size-btn");
+  const szBtn = createElementWithText("p", "\u25A1", "btn");
   container.appendChild(szBtn);
 
-  const closeBtn = createElementWithText("p", "x", "close-btn");
+  const closeBtn = createElementWithText("p", "x", "btn");
   container.appendChild(closeBtn);
   menuBar.appendChild(container);
 
@@ -58,7 +57,7 @@ export const createMenuBar = (modalName, appName) => {
     const modal = document.getElementById(modalName);
     modal.style.display = "none";
     const tray = document.querySelector("#iconTray");
-    const tab = createElementWithText("p", appName, "tab");
+    const tab = createElementWithText("p", appName, "btn");
     tray.appendChild(tab);
     tab.addEventListener("click", () => {
       modal.style.display = "block";
@@ -74,6 +73,7 @@ export const createMenuBar = (modalName, appName) => {
     let topValue = parseInt(getStyle.top);
     let rightValue = parseInt(getStyle.right);
     let bottomValue = parseInt(getStyle.bottom);
+    menuBar.style.backgroundColor = "rgb(0, 11, 124)";
 
     modal.style.left =
       leftValue + movementX < 0 || rightValue - movementX < 10
@@ -89,7 +89,7 @@ export const createMenuBar = (modalName, appName) => {
   const stopDrag = () => {
     //console.log("stop drag");
     menuBar.style.cursor = "default";
-    menuBar.style.backgroundColor = "#0e102f";
+    menuBar.style.backgroundColor = "blue";
     menuBar.removeEventListener("mousemove", onDrag);
     //document.getElementById(modalName).zIndex = "0";
   };

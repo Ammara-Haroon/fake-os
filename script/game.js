@@ -85,7 +85,8 @@ const createTicTacToe = () => {
   gameModal.appendChild(btnContainer);
 
   //add play again button
-  const resetBtn = createElementWithText("button", "Play Again !", "click-btn");
+  const resetBtn = createElementWithText("button", "Play Again", "btn");
+  resetBtn.classList.add("btn");
   resetBtn.addEventListener("click", () => {
     resetGame();
   });

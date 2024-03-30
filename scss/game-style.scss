@@ -4,20 +4,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 4px;
+  gap: 2px;
   height: calc(100% - 80px);
-  width: 100%;
+  width: calc(100% - 19px);
+
   margin-top: 2px;
+  border: 10px solid darkgrey;
   .game-btn {
     font-size: xxx-large;
+    background-color: lightgrey;
     &:active {
       border: 2px solid beige;
     }
     &:hover {
-      background-color: cadetblue;
+      background-color: darkgray;
     }
     &:disabled {
-      color: var.$windows-blue;
+      background-color: darkgray;
     }
   }
 }

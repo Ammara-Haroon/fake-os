@@ -34,8 +34,8 @@ const createImageGallery = () => {
 
 //creates the navigation arrows
 const createNavigationArrows = () => {
-  const bArr = createElementWithText("button", "←", "click-btn", "galleryLArr");
-  const fArr = createElementWithText("button", "→", "click-btn", "galleryRArr");
+  const bArr = createElementWithText("button", "←", "btn", "galleryLArr");
+  const fArr = createElementWithText("button", "→", "btn", "galleryRArr");
   const arrGp = createElementWithText("div", null, "arrows-group");
   arrGp.appendChild(bArr);
   arrGp.appendChild(fArr);

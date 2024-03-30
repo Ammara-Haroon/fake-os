@@ -11,30 +11,6 @@
   border-top: 2px solid beige;
   display: flex;
   justify-content: space-between;
-  button {
-    font-weight: bold;
-    font-size: 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    background-color: var.$windows-gray;
-    @include mi.dbl-colored-border(white, grey);
-
-    &:active {
-      @include mi.dbl-colored-border(grey, white);
-    }
-    img {
-      height: 30px;
-      width: 30px;
-    }
-    p {
-      display: inline;
-      margin: 1px;
-    }
-
-    // border: 1px solid red;
-  }
 
   .clock {
     margin: 2px;

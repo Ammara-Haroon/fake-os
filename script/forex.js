@@ -83,7 +83,7 @@ const createForm = () => {
   form.appendChild(divTo);
 
   //creates button to get conversion
-  const btn = createElementWithText("button", "Convert", "click-btn");
+  const btn = createElementWithText("button", "Convert", "btn");
   form.appendChild(btn);
 
   form.addEventListener("submit", (e) => {
@@ -138,8 +138,6 @@ const createCurrencyConverter = () => {
   currencyConverterModal.addEventListener("click", () => {
     //console.log("cc got clicked");
     makeModalWindowActive(currencyConverterModal);
-
-    //currencyConverterModal.classList.add("modal--maximized");
   });
 };
 
