@@ -34,12 +34,12 @@ form {
       text-overflow: ellipsis;
       text-wrap: stable;
       height: fit-content;
-      //width: fit-content;
-      //border: 1px solid red;
     }
-
     select {
       margin: 10px;
+      background-color: lightgray;
+      font-size: small;
+      font-weight: bold;
     }
   }
 }

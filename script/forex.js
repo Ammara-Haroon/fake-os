@@ -24,8 +24,9 @@ const getCurrencyTypesOptions = () => {
 };
 
 //makes a selection drop down based on the available currency types
-const createCurrencySelector = () => {
-  const select = document.createElement("select");
+const createCurrencySelector = (id) => {
+  const select = createElementWithText("select", null, "cur_input", id);
+  select.setAttribute("value", "AUD");
   getDataFromAPI().then((data) => {
     const currencyList = Object.keys(data);
     currencyList.forEach((curr) => {
@@ -38,7 +39,25 @@ const createCurrencySelector = () => {
 
   return select;
 };
+const createDivWithSelector = (inputId, selectorId, isDisabled = false) => {
+  const div = document.createElement("div");
+  const input = createElementWithText("input", null, "form-text", inputId);
+  input.setAttribute("value", "1.00");
+  if (isDisabled) {
+    input.classList.add("output");
+    input.disabled = true;
+    input.required = false;
+  } else {
+    input.required = true;
+    input.setAttribute("type", "number");
+  }
 
+  const selectFrom = createCurrencySelector(selectorId);
+  selectFrom.setAttribute("value", "AUD");
+  div.appendChild(input);
+  div.appendChild(selectFrom);
+  return div;
+};
 const createForm = () => {
   const form = createElementWithText(
     "form",
@@ -50,36 +69,15 @@ const createForm = () => {
   const inputLbl = createElementWithText("label", "from:");
   inputLbl.setAttribute("for", "inputAmount");
   form.appendChild(inputLbl);
-  const divFrom = document.createElement("div");
-  const input = createElementWithText(
-    "input",
-    "1.00",
-    "form-text",
-    "inputAmount"
-  );
-  input.setAttribute("type", "number");
-  input.setAttribute("value", "1.00");
-  input.required = true;
-  const selectFrom = createCurrencySelector();
-  divFrom.appendChild(input);
-  divFrom.appendChild(selectFrom);
+
+  const divFrom = createDivWithSelector("inputAmount", "selectFrom");
   form.appendChild(divFrom);
+
   const outputLbl = createElementWithText("label", "to:");
   outputLbl.setAttribute("for", "outputAmount");
   form.appendChild(outputLbl);
-  const divTo = document.createElement("div");
-  const output = createElementWithText(
-    "input",
-    "1.00",
-    "form-text",
-    "outputAmount"
-  );
-  output.classList.add("output");
-  output.setAttribute("value", "1.00");
-  output.disabled = true;
-  divTo.appendChild(output);
-  const selectTo = createCurrencySelector();
-  divTo.appendChild(selectTo);
+
+  const divTo = createDivWithSelector("outputAmount", "selectTo", true);
   form.appendChild(divTo);
 
   //creates button to get conversion
@@ -88,6 +86,11 @@ const createForm = () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    const input = document.querySelector("#inputAmount");
+    const selectFrom = document.querySelector("#selectFrom");
+    const selectTo = document.querySelector("#selectTo");
+    const output = document.querySelector("#outputAmount");
+    //console.log(Number(input.value), selectFrom.value, selectTo.value, output);
     const result = convertRates(
       Number(input.value),
       selectFrom.value,
@@ -98,18 +101,18 @@ const createForm = () => {
   return form;
 };
 //calls api and makes a rate conversion between selected currencies
-const convertRates = (amount, from, to, output) => {
-  getDataFromAPI().then((data) => {
-    const result = (amount * data[to]) / data[from];
-    output.value = result
-      .toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      })
-      .replace("$", "");
-  });
+const convertRates = async (amount, from, to, output) => {
+  const data = await getDataFromAPI();
+  const result = (amount * data[to]) / data[from];
+  output.setAttribute(
+    "value",
+    result.toLocaleString("en-US", {
+      style: "currency",
+      currency: to,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })
+  );
 };
 
 //creates a currency converter app

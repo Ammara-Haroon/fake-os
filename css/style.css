@@ -519,6 +519,9 @@ form div .output {
 }
 form div select {
   margin: 10px;
+  background-color: lightgray;
+  font-size: small;
+  font-weight: bold;
 }
 
 * {
