@@ -45,6 +45,12 @@ export const createMenuBar = (modalName, appName) => {
     modal.classList.toggle("modal--maximized");
     modal.style.top = "0";
     modal.style.left = "0";
+    if (modalName === "gameModal") {
+      const overlay = document.querySelector(".overlay");
+      if (overlay) {
+        document.querySelector(".btn-container").replaceChild(overlay);
+      }
+    }
   });
 
   //adding event listener to close button

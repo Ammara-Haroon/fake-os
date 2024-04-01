@@ -7,7 +7,7 @@ import {
 const galleryIcon = document.getElementById("galleryIcon");
 
 //creates an image gallery
-const createImageGallery = () => {
+const createImageGallery = (isThumbNail) => {
   // const fs = require("fs");
   // const directoryPath = "../assets/photos/";
   // const files = fs.readdirSync(directoryPath);
@@ -20,15 +20,28 @@ const createImageGallery = () => {
     "../assets/photos/pexels-tamara-velazquez-5199145.jpg",
     "../assets/photos/pexels-thuong-d-14262264.jpg",
   ];
-  const gallery = createElementWithText("div", null, "gallery", "photoGallery");
-  imgfNames.forEach((fname) => {
-    const img = createElementWithText("img", null, "gallery__item");
+  const gallery = isThumbNail
+    ? createElementWithText("div", null, "gallery", "previewGallery")
+    : createElementWithText("div", null, "gallery", "photoGallery");
+  imgfNames.forEach((fname, index) => {
+    let img;
+    if (isThumbNail) {
+      img = createElementWithText("img", null, "thumbnail");
+      img.addEventListener("click", () => {
+        const gallery = document.getElementsByClassName("gallery__item");
+        gallery[offset].classList.remove("gallery__item--active");
+        offset = index;
+        gallery[offset].classList.add("gallery__item--active");
+      });
+    } else {
+      img = createElementWithText("img", null, "gallery__item");
+    }
     img.src = fname;
     gallery.appendChild(img);
   });
-
-  gallery.firstChild.classList.add("gallery__item--active");
-
+  if (!isThumbNail) {
+    gallery.firstChild.classList.add("gallery__item--active");
+  }
   return gallery;
 };
 
@@ -47,8 +60,6 @@ const createNavigationArrows = () => {
 };
 
 let offset = 0;
-//const NUMBER_OF_DISPLAY_IMAGES = 1;
-
 const goForwards = () => {
   const gallery = document.getElementsByClassName("gallery__item");
   gallery[offset].classList.remove("gallery__item--active");
@@ -79,11 +90,16 @@ const createGalleryModal = () => {
   const menuBar = createMenuBar("galleryModal", "Photo Gallery");
   galleryModal.appendChild(menuBar);
   //adds a gallery
+
   const imgGallery = createImageGallery();
   galleryModal.appendChild(imgGallery);
   //add navigation arrows
   const navArrows = createNavigationArrows();
   galleryModal.appendChild(navArrows);
+
+  const thumbNails = createImageGallery(true);
+  console.dir(thumbNails);
+  galleryModal.appendChild(thumbNails);
 
   //add it to the desktop screen
   document.getElementsByTagName("body")[0].appendChild(galleryModal);

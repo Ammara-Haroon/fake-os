@@ -389,7 +389,7 @@ template {
 
 .gallery {
   width: 100%;
-  height: calc(100% - 100px);
+  height: calc(100% - 200px);
   display: flex;
   justify-content: center;
 }
@@ -420,6 +420,7 @@ template {
   padding: 10px;
   height: 50px;
   width: 100%;
+  margin-top: 15px;
   box-sizing: border-box;
 }
 .arrows-group #galleryLArr {
@@ -431,6 +432,34 @@ template {
   width: fit-content;
   font-weight: bold;
   font-size: xx-large;
+}
+
+#previewGallery {
+  width: calc(100% - 30px);
+  height: 80px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+#previewGallery .thumbnail {
+  border: 3px solid black;
+  cursor: pointer;
+  border-radius: 1px;
+  margin: 5px;
+  height: 100%;
+  aspect-ratio: 1;
+}
+#previewGallery .thumbnail:hover {
+  transform: scale(1.05);
+}
+#previewGallery .thumbnail--active {
+  visibility: visible;
+  display: inline;
+  width: 75%;
+  height: 90%;
+  object-fit: cover;
 }
 
 .menu-bar {
@@ -486,10 +515,13 @@ template {
   cursor: pointer; /* Add a pointer on hover */
   color: beige;
   padding: 5px;
+  overflow: hidden;
 }
 .overlay img {
   height: 90%;
   width: 90%;
+  bottom: 0;
+  left: 0;
 }
 
 form {

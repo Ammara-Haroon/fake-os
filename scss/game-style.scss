@@ -31,8 +31,11 @@
   cursor: pointer; /* Add a pointer on hover */
   color: beige;
   padding: 5px;
+  overflow: hidden;
   img {
     height: 90%;
     width: 90%;
+    bottom: 0;
+    left: 0;
   }
 }

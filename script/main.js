@@ -37,7 +37,10 @@ body.addEventListener("click", (e) => {
     startMenu.classList.remove("show");
     //console.log(window.getComputedStyle(startMenu).zIndex);
   }
+  const overlay = document.querySelector(".overlay");
+  if (overlay) {
+    document.querySelector(".btn-container").removeChild(overlay);
+  }
 });
 
 ///////////////////
-
