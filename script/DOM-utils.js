@@ -7,12 +7,7 @@ export const makeModalWindowActive = (modal) => {
   modal.style.zIndex = "2";
 };
 //a generic function to create an element with a text, class and id if respective arguments are provided
-export const createElementWithText = (
-  tag,
-  txt = null,
-  cl = null,
-  id = null
-) => {
+export const createElementWithText = (tag, txt, cl, id) => {
   const el = document.createElement(tag);
   if (txt) el.append(txt);
   if (cl) el.classList.add(cl);
@@ -45,12 +40,6 @@ export const createMenuBar = (modalName, appName) => {
     modal.classList.toggle("modal--maximized");
     modal.style.top = "0";
     modal.style.left = "0";
-    if (modalName === "gameModal") {
-      const overlay = document.querySelector(".overlay");
-      if (overlay) {
-        document.querySelector(".btn-container").replaceChild(overlay);
-      }
-    }
   });
 
   //adding event listener to close button
