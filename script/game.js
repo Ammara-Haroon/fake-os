@@ -16,6 +16,11 @@ const resetGame = () => {
     btn.innerText = "";
     btn.disabled = false;
   });
+  const container = document.querySelector(".btn-container");
+  const overlay = document.querySelector(".overlay");
+  if (overlay) {
+    container.removeChild(overlay);
+  }
 };
 
 //looks at the moves and check for three in a row pattern
@@ -44,14 +49,24 @@ const checkForWinner = () => {
   combo.push(moves[2] + moves[4] + moves[6]);
 
   //check for 3 in a row pattern
+  let winner = "";
+  let isDraw = false;
   if (combo.includes("XXX")) {
-    alert("Congratulations, X is the winner !");
-    btnArr.forEach((btn) => (btn.disabled = true));
+    winner = "Congratulations X ! You won the game.";
+    //alert("Congratulations, X is the winner !");
   } else if (combo.includes("OOO")) {
-    alert("Congratulations, O is the winner !");
-    btnArr.forEach((btn) => (btn.disabled = true));
+    winner = "Congratulations O ! You won the game.";
+    //alert("Congratulations, O is the winner !");
+    //btnArr.forEach((btn) => (btn.disabled = true));
   } else if (isGameFinished) {
-    alert("It's a tie !");
+    winner = "Woops... It's a tie !";
+    isDraw = true;
+  }
+  if (winner) {
+    btnArr.forEach((btn) => (btn.disabled = true));
+    setTimeout(() => {
+      createOverlay(winner, isDraw);
+    }, 300);
   }
 };
 
@@ -108,3 +123,25 @@ const createTicTacToe = () => {
 gameIcon.addEventListener("dblclick", () => {
   createTicTacToe();
 });
+
+function createOverlay(winningMsg, isDraw) {
+  const overlay = createElementWithText("div", winningMsg, "overlay");
+  const gif = document.createElement("img");
+
+  gif.src = isDraw
+    ? "../assets/knot.gif"
+    : "../assets/happy-win-trophy-with-confetti-tb52kqiyvytfvobs.gif";
+  overlay.appendChild(gif);
+  const container = document.querySelector(".btn-container");
+  const containerStyle = window.getComputedStyle(container);
+  overlay.style.width = containerStyle.width;
+  overlay.style.height = containerStyle.height;
+  overlay.style.top = containerStyle.top;
+  overlay.style.left = containerStyle.left;
+  container.appendChild(overlay);
+
+  overlay.addEventListener("click", () => {
+    const container = document.querySelector(".btn-container");
+    container.removeChild(overlay);
+  });
+}

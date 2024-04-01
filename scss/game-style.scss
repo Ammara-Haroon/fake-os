@@ -24,3 +24,15 @@
     }
   }
 }
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  color: beige;
+  padding: 5px;
+  img {
+    height: 90%;
+    width: 90%;
+  }
+}
