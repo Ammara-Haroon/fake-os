@@ -1,0 +1,45 @@
+@use "./partials/variables" as var;
+@use "./partials/mixins" as mi;
+
+form {
+  display: flex;
+  flex-direction: column;
+  & > button {
+    margin-left: calc(50% - 50px);
+    padding: 20px;
+  }
+  label {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+  }
+  div {
+    //border: 4px solid var.$windows-blue;
+    @include mi.dbl-colored-border(white, grey);
+    display: flex;
+    margin: 10px;
+    width: fit-content;
+    .form-text {
+      width: 500px;
+      text-align: right;
+      margin: 10px;
+      height: 30px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .output {
+      background-color: lightgray;
+      padding-right: 0.3em;
+      text-overflow: ellipsis;
+      text-wrap: stable;
+      height: fit-content;
+    }
+    select {
+      margin: 10px;
+      background-color: lightgray;
+      font-size: small;
+      font-weight: bold;
+    }
+  }
+}

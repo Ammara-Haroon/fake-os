@@ -1,0 +1,76 @@
+@use "./partials/variables" as var;
+
+.gallery {
+  width: 100%;
+  height: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    border: 3px solid black;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    display: none;
+    margin: 20px;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &--active {
+      visibility: visible;
+      display: inline;
+      width: 75%;
+      height: 90%;
+      object-fit: cover;
+    }
+  }
+}
+.arrows-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  margin-top: 15px;
+  box-sizing: border-box;
+  #galleryLArr {
+    width: fit-content;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  #galleryRArr {
+    width: fit-content;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+}
+
+#previewGallery {
+  width: calc(100% - 30px);
+  height: 80px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  .thumbnail {
+    border: 3px solid black;
+    cursor: pointer;
+    border-radius: 1px;
+    margin: 5px;
+    height: 100%;
+    aspect-ratio: 1;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &--active {
+      visibility: visible;
+      display: inline;
+      width: 75%;
+      height: 90%;
+      object-fit: cover;
+    }
+  }
+}

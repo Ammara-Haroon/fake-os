@@ -1,0 +1,24 @@
+@use "./partials/variables" as var;
+@use "./partials/mixins" as mi;
+.taskbar {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  width: 100vw;
+  background-color: var.$windows-gray;
+  border-top: 2px solid beige;
+  display: flex;
+  justify-content: space-between;
+
+  .clock {
+    margin: 2px;
+    @include mi.dbl-colored-border(grey, white);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+  }
+}
