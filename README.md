@@ -51,6 +51,7 @@ HTML, SCSS, compiled CSS, JavaScript and Image files (assets) are maintained in 
 
 ### Features
 
+![alt text](image.png)
 Fake - OS is built with the following features.
 
 #### Start Menu
@@ -79,14 +80,17 @@ All the apps have a menubar at the top with min/max, close, minimise to taskbar 
 
 #### Gallery
 
+![alt text](image-1.png)
 The gallery app displays an image from a gallery one at time. The forward button and backward button has attached event listeners that control which photo to display and which ones to hide.
 
 #### Tic-Tac-Toe
 
+![alt text](image-2.png)
 This is a simple tic-tac-toe game. It has a "play again" button that resets the app to the starting state.
 
 #### Currency Converter
 
+![alt text](image-3.png)
 This app uses api calls to get latest currency exchange data and displays it to the user.
 
 #### Other Interesting Features
