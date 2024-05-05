@@ -9,16 +9,16 @@ const galleryIcon = document.getElementById("galleryIcon");
 //creates an image gallery
 const createImageGallery = (isThumbNail) => {
   // const fs = require("fs");
-  // const directoryPath = "../assets/photos/";
+  // const directoryPath = "./assets/photos/";
   // const files = fs.readdirSync(directoryPath);
   // console.log(files);
 
   const imgfNames = [
-    "../assets/photos/pexels-ave-calvar-martinez-7878167.jpg",
-    "../assets/photos/pexels-catalina-carvajal-herrera-9677898.jpg",
-    "../assets/photos/pexels-joseba-garcia-moya-18133772.jpg",
-    "../assets/photos/pexels-tamara-velazquez-5199145.jpg",
-    "../assets/photos/pexels-thuong-d-14262264.jpg",
+    "./assets/photos/pexels-ave-calvar-martinez-7878167.jpg",
+    "./assets/photos/pexels-catalina-carvajal-herrera-9677898.jpg",
+    "./assets/photos/pexels-joseba-garcia-moya-18133772.jpg",
+    "./assets/photos/pexels-tamara-velazquez-5199145.jpg",
+    "./assets/photos/pexels-thuong-d-14262264.jpg",
   ];
   const gallery = isThumbNail
     ? createElementWithText("div", null, "gallery", "previewGallery")

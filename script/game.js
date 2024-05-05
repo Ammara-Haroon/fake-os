@@ -129,8 +129,8 @@ function createOverlay(winningMsg, isDraw) {
   const gif = document.createElement("img");
 
   gif.src = isDraw
-    ? "../assets/knot.gif"
-    : "../assets/happy-win-trophy-with-confetti-tb52kqiyvytfvobs.gif";
+    ? "./assets/knot.gif"
+    : "./assets/happy-win-trophy-with-confetti-tb52kqiyvytfvobs.gif";
   overlay.appendChild(gif);
   const container = document.querySelector(".btn-container");
   const containerStyle = window.getComputedStyle(container);
