@@ -25,7 +25,7 @@ The goal of this project is to simulate a fake operating system with layout and 
 
 ### Design:
 
-Implemeneted a single page application that simulated Windows 98. It works for landscape orientation.
+Implemented a single page application that simulated Windows 98. It works for landscape orientation.
 
 ### Tools Used:
 
@@ -39,13 +39,13 @@ HTML, SCSS, compiled CSS, JavaScript and Image files (assets) are maintained in 
 
 ### Styling:
 
-- The background image is Windows 98 wallpaper that fits the whole viewport at all orientations. It has z-index value euqual to -2 (the lowest) to make sure the wallpaper always appears in the background.
+- The background image is Windows 98 wallpaper that fits the whole viewport at all orientations. It has z-index value equal to -2 (the lowest) to make sure the wallpaper always appears in the background.
 - Start Menu button is on the bottom left of the page.
 - A running clock that displays time and updates time is on the bottom right corner.
-- Desktop icons are towards to top right part of the desktop.
+- Desktop icons are towards to top left part of the desktop.
 - The taskbar is at the bottom of the desktop. It displays app names when they are minimised.
-- All the design and styling of the icons, start menu, buttons, clock and apps is done in SASS and is foucused to copy the windowns 98 styling as much as possible.
-- Desktop apps open up usually around the center area of the desktop.
+- All the design and styling of the icons, start menu, buttons, clock and apps is done in SASS and is focused to copy the windowns 98 styling as much as possible.
+- Desktop apps open up usually around the centre area of the desktop.
 - Each app has a menubar with close, maximise and minimise buttons.
 - Each app has a consistent color scheme.
 
@@ -56,7 +56,7 @@ Fake - OS is built with the following features.
 
 #### Start Menu
 
-The "Start" button opens up a start menu on "click" event. The structure of the start menu with icons and labels is built in html but the visiblilty is controlled through Javascript by toggling the class list of the start menu.
+The "Start" button opens up a start menu on "click" event. The structure of the start menu with icons and labels is built in html but the visibililty is controlled through JavaScript by toggling the class list of the start menu.
 
 #### Clock
 
@@ -64,19 +64,19 @@ The clock is made active in real time by getting the latest time each second usi
 
 #### Desktop Icons
 
-The desktop icons are all linked to event listeners in Javascript to open up their respective apps. Whenever an icon is double-clicked, Javascript creates the respective modal and displays it to the user.
+The desktop icons are all linked to event listeners in JavaScript to open up their respective apps. Whenever an icon is double-clicked, JavaScript creates the respective modal and displays it to the user.
 
 #### Apps
 
-All th apps are actually modals that are built in javascript on the fly and displayed to the user. Only one instance of the app is open at a time.
+All the apps are actually modals that are built in JavaScript on the fly and displayed to the user. Only one instance of the app is open at a time.
 
 ##### App Menubar
 
 All the apps have a menubar at the top with min/max, close, minimise to taskbar buttons.
 
 - The close button closes/exits the app. This is done by removing the app from the html node tree through javascript.
-- The min/max button makes the app toggle between full screen or standard size. This is achieved through CSS styling class and javascript.
-- The minimise to taskbar button makes the app invisible and a tab is added to the taskbar which when clicked makes the app appear again. This achieved by adding tabs to DOM and changing the css display properties of the modal through javascript .
+- The min/max button makes the app toggle between full screen or standard size. This is achieved through CSS styling class and JavaScript.
+- The minimise to taskbar button makes the app invisible and a tab is added to the taskbar which when clicked makes the app appear again. This achieved by adding tabs to DOM and changing the CSS display properties of the modal through JavaScript .
 
 #### Gallery
 
@@ -102,5 +102,5 @@ This app uses api calls to get latest currency exchange data and displays it to 
 
 ## Future Direction
 
-1. The dragging functionality is not as smooth as expected. Strategy needs to be reexamined.
+1. The dragging functionality is not as smooth as expected. Strategy needs to be re-examined.
 2. Start Menu tabs like applications should open sub-menu which selectable links.
