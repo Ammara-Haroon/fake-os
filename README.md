@@ -1,5 +1,6 @@
 # Fake - OS
 https://ammara-haroon.github.io/fake-os/
+
 Fake OS Project in Vanilla JavaScript, SASS and HTML
 
 ## Project Description
