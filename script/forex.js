@@ -144,7 +144,6 @@ const createCurrencyConverter = () => {
   document.getElementsByTagName("body")[0].appendChild(currencyConverterModal);
   makeModalWindowActive(currencyConverterModal);
   currencyConverterModal.addEventListener("click", () => {
-    //console.log("cc got clicked");
     makeModalWindowActive(currencyConverterModal);
   });
 };

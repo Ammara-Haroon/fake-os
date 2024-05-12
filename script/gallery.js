@@ -106,7 +106,6 @@ const createGalleryModal = () => {
   makeModalWindowActive(galleryModal);
 
   galleryModal.addEventListener("click", () => {
-    //console.log("gallery got clicked");
     makeModalWindowActive(galleryModal);
   });
   //galleryModal.classList.add("modal--maximized");
