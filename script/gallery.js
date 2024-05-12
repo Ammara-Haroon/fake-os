@@ -98,7 +98,7 @@ const createGalleryModal = () => {
   galleryModal.appendChild(navArrows);
 
   const thumbNails = createImageGallery(true);
-  console.dir(thumbNails);
+  //console.dir(thumbNails);
   galleryModal.appendChild(thumbNails);
 
   //add it to the desktop screen
@@ -110,6 +110,8 @@ const createGalleryModal = () => {
     makeModalWindowActive(galleryModal);
   });
   //galleryModal.classList.add("modal--maximized");
+ 
+
 };
 
 //open up a gallery when desktop icon is clicked

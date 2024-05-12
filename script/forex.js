@@ -50,6 +50,11 @@ const createDivWithSelector = (inputId, selectorId, isDisabled = false) => {
   } else {
     input.required = true;
     input.setAttribute("type", "number");
+    input.addEventListener("click",(e)=>{
+      const val = e.target.value;
+      e.target.value = "";
+      e.target.value = val;
+    })
   }
 
   const selectFrom = createCurrencySelector(selectorId);

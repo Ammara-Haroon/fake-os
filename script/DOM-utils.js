@@ -59,6 +59,9 @@ export const createMenuBar = (modalName, appName) => {
       tray.removeChild(tab);
     });
   });
+
+////////////////////////////////
+
   /////////////////////////////
   //on dragging change modals position
   const onDrag = ({ movementX, movementY }) => {

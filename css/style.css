@@ -469,6 +469,9 @@ template {
   background-color: blue;
   width: 100%;
 }
+.menu-bar:hover {
+  cursor: pointer;
+}
 .menu-bar div {
   display: flex;
   align-self: flex-end;
