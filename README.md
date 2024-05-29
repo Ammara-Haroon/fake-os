@@ -28,7 +28,7 @@ The goal of this project is to simulate a fake operating system with layout and 
 - Clock that displays the current time
 - Wallpaper scales to fit the viewport
 - Minimum 3 icons on desktop
-- The menu is positioned in the appropriate place (bottom left on windows, top of the screen on android)
+- The menu is positioned in the appropriate place (bottom left on Windows, top of the screen on android)
 - Apps should be able to contain text, an image or a form
 
 ## Implementation Details:
@@ -51,11 +51,11 @@ HTML, SCSS, compiled CSS, JavaScript and Image files (assets) are maintained in 
 
 - The background image is Windows 98 wallpaper that fits the whole viewport at all orientations. It has z-index value equal to -2 (the lowest) to make sure the wallpaper always appears in the background.
 - Start Menu button is on the bottom left of the page.
-- A running clock that displays time and updates time is on the bottom right corner.
+- A running clock that displays time and updates time is in the bottom right corner.
 - Desktop icons are towards to top left part of the desktop.
 - The taskbar is at the bottom of the desktop. It displays app names when they are minimised.
 - All the design and styling of the icons, start menu, buttons, clock and apps is done in SASS and is focused to copy the windowns 98 styling as much as possible.
-- Desktop apps open up usually around the centre area of the desktop.
+- Desktop apps open up usually around the center area of the desktop.
 - Each app has a menubar with close, maximise and minimise buttons.
 - Each app has a consistent color scheme.
 
@@ -65,7 +65,7 @@ Fake - OS is built with the following features.
 
 #### Start Menu
 
-The "Start" button opens up a start menu on "click" event. The structure of the start menu with icons and labels is built in html but the visibililty is controlled through JavaScript by toggling the class list of the start menu.
+The "Start" button opens up a start menu on "click" event. The structure of the start menu with icons and labels is built in HTML, but the visibility is controlled through JavaScript by toggling the class list of the start menu.
 
 #### Clock
 
@@ -83,7 +83,7 @@ All the apps are actually modals that are built in JavaScript on the fly and dis
 
 All the apps have a menubar at the top with min/max, close, minimise to taskbar buttons.
 
-- The close button closes/exits the app. This is done by removing the app from the html node tree through javascript.
+- The close button closes/exits the app. This is done by removing the app from the HTML node tree through JavaScript.
 - The min/max button makes the app toggle between full screen or standard size. This is achieved through CSS styling class and JavaScript.
 - The minimise to taskbar button makes the app invisible and a tab is added to the taskbar which when clicked makes the app appear again. This achieved by adding tabs to DOM and changing the CSS display properties of the modal through JavaScript .
 
@@ -114,7 +114,7 @@ Start Menu tabs like applications should open sub-menu which selectable links.
 
 ## Change logs
 
-### 19/03/2024 - Added operating system wallaper, taskbar and start menu
+### 19/03/2024 - Added operating system wallpaper, taskbar and start menu
 
 ### 22/03/2024 - Added gallery and tic-tac-toe app
 
