@@ -3,6 +3,15 @@ https://ammara-haroon.github.io/fake-os/
 
 Fake OS Project in Vanilla JavaScript, SASS and HTML
 
+## Demo & Snippets
+![alt text](image.png)
+### Gallery
+![alt text](image-1.png)
+### Tic-Tac-Toe
+![alt text](image-2.png)
+### Currency Converter
+![alt text](image-3.png)
+
 ## Project Description
 
 The goal of this project is to simulate a fake operating system with layout and content built in CSS and HTML and add interactive elements using JavaScript.
@@ -52,7 +61,6 @@ HTML, SCSS, compiled CSS, JavaScript and Image files (assets) are maintained in 
 
 ### Features
 
-![alt text](image.png)
 Fake - OS is built with the following features.
 
 #### Start Menu
@@ -81,17 +89,14 @@ All the apps have a menubar at the top with min/max, close, minimise to taskbar 
 
 #### Gallery
 
-![alt text](image-1.png)
 The gallery app displays an image from a gallery one at time. The forward button and backward button has attached event listeners that control which photo to display and which ones to hide.
 
 #### Tic-Tac-Toe
 
-![alt text](image-2.png)
 This is a simple tic-tac-toe game. It has a "play again" button that resets the app to the starting state.
 
 #### Currency Converter
 
-![alt text](image-3.png)
 This app uses api calls to get latest currency exchange data and displays it to the user.
 
 #### Other Interesting Features
@@ -101,7 +106,30 @@ This app uses api calls to get latest currency exchange data and displays it to 
 - The fake operating system tries to simulate the active window effect. The app window that is clicked becomes active and is displayed on top of other windows. Even the start menu opens up on top of a window if it is the one clicked most recently.
 - Start menu closes when either start button is clicked or any other part of the desktop is clicked.
 
-## Future Direction
+## Known Issues
+The dragging functionality is not as smooth as expected. Strategy needs to be re-examined.
 
-1. The dragging functionality is not as smooth as expected. Strategy needs to be re-examined.
-2. Start Menu tabs like applications should open sub-menu which selectable links.
+## Future Goals
+Start Menu tabs like applications should open sub-menu which selectable links.
+
+## Change logs
+
+### 19/03/2024 - Added operating system wallaper, taskbar and start menu
+
+### 22/03/2024 - Added gallery and tic-tac-toe app
+
+### 19/03/2024 
+- Added Currency Converter app
+- Added maximise and minimise functionality to app windows
+- Added dragging ability to app windows
+
+### 30/03/2024 - Changed app theme to match windows styling
+
+### 01/04/2024 - Improved apps
+- Removed windows alert and replaced it with an overlay component indicating victory or tie in tic-tac-toe
+- Added thumbnails to gallery app
+
+### 12/05/2024 - Fixed input cursor focus in Currency Converter
+
+## Challenges
+Styling and arranging dynamically created HTML elements has been challenging. Adding a simple HTML element and adding correct classes and id was a cumbersome task.
